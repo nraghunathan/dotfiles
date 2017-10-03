@@ -19,10 +19,18 @@ git push -u origin HEAD
 
 
 ## Important Files
-*Brewfile*
+`Brewfile`
+
 Strap will look for a Brewfile in the root of your dotfiles repository.  If it finds it, it will symlink it to your personal root folder, and then install all Brew packages and casks referenced in it.
 
-*script/postbrew*
+`script/postbrew`
+
 Strap will look for this file in `script/postbrew`, and it will run it as the very last step of the Strap process.
 
+`.bash_profile`
 
+This is your personal bash profile.  Strap will symlink this to your home folder.
+
+`.gitconfig`
+
+This is your personal .gitconfig file.  Strap will symlink this to your home folder.
