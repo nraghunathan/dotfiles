@@ -1,0 +1,36 @@
+[push]
+	default = current
+
+[core]
+	editor = vim
+	eol = lf
+
+[user]
+	name = 
+	email = 
+[github]
+	user = 
+
+[alias]
+	who = shortlog -s
+    undo = reset --hard
+    logv = log --oneline --decorate --graph
+ 	co = checkout
+	st = status
+	gf = diff
+
+[color]
+	ui = true
+
+[hub]
+	protocol = https
+
+[credential]
+	helper = osxkeychain
+
+[auto]
+	crlf = input
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
