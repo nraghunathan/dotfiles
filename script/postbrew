@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+# This is a special script that is run at the end of the main Strap
+# scripts.  Use it to provide additional customizations.
+
+# source bash profile to get environment variables set
+#[ -f "$HOME/.bash_profile" ] && source "$HOME/.bash_profile"
+
+#---------------------------------------------------------------------
+# Projects
+#---------------------------------------------------------------------
+echo "Configuring projects"
+SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
+if [ -f "$SETUP_SCRIPT" ]; then
+	# PPM is setup by the base scripts - no need to manual include
+	# bash "$SETUP_SCRIPT" ttm
+	# bash "$SETUP_SCRIPT" ppmspa
+	# bash "$SETUP_SCRIPT" cognos
+fi
+
+#---------------------------------------------------------------------
+# Personal setup
+#---------------------------------------------------------------------
+# personal="$HOME/src/personal-configuration/setup.sh"
+#[ -f "$personal" ] && bash "$personal"
