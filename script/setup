@@ -1,5 +1,3 @@
-#!/bin/bash
-
 #!/usr/bin/env bash
 
 DOTFILESDIRREL=$(dirname $0)
@@ -19,5 +17,4 @@ ensure_dotfile_link() {
 }
 
 ensure_dotfile_link .gitconfig
-ensure_dotfile_link .bash_profile
 ensure_dotfile_link .Brewfile

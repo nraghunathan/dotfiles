@@ -21,9 +21,13 @@ git push -u origin HEAD
 
 
 ## Important Files
-`Brewfile`
+`.Brewfile`
 
-Strap will look for a Brewfile in the root of your dotfiles repository.  If it finds it, it will symlink it to your personal root folder, and then install all Brew packages and casks referenced in it.
+Strap will look for a `.Brewfile` in the root of your dotfiles repository (`~/.dotfiles`).  If it finds it, it will symlink it to your personal root folder, and then install all Brew packages and casks referenced in it.
+
+`script/setup`
+
+Strap will call this script, if it exists, to perform personalized setup steps.  You can call out from here to other scripts, other repos, etc.
 
 `script/postbrew`
 
@@ -31,7 +35,7 @@ Strap will look for this file in `script/postbrew`, and it will run it as the ve
 
 `.bash_profile`
 
-This is your personal bash profile.  Strap will symlink this to your home folder.
+This is your personal bash profile.  The daptiv `.bash_profile` file will source your personal `.bash_profile` file, if it exists in `~/.dotfiles/.bash_profile`
 
 `.gitconfig`
 
