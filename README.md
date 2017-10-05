@@ -4,6 +4,8 @@ dotfiles-template
 Use this repository as a template for your own personal "dotfiles" repository, if you don't already have one.  If you do, you can reference the files and file structure to make your existing dotfiles repository work with the Daptiv Strap scripts.
 
 # Instructions
+There are more than a few ways to use this repository.  If you don't have a dotfiles repository already, then the instructions below are fine.  If you do have a personal dotfiles repository, it's probably best to ignore these instructions and treat this repository as "inspiration" for the changes you'll need to make.  At the end, you need to have the **Important Files** in your personal dotfiles repository so that the Daptiv Strap process can work.
+
 * Clone this repository in order to get a copy of it locally.
 * If you don't have a dotfiles repository already, then:
 *  Create repository in your github account named `dotfiles`, but don't clone it.
@@ -12,9 +14,11 @@ Use this repository as a template for your own personal "dotfiles" repository, i
 ```bash
 git clone https://github.com/daptiv/dotfiles-template.git ~/.dotfiles
 cd ~/.dotfiles
-git remote remove origin
+rm -rf .git/
+echo "My personal dotfiles" > ./README.md
+git init
 git remote add origin git@github.com:{your-github-username}/dotfiles.git
-git add -f *
+git add *
 git commit -a -m "Initial commit"
 git push -u origin HEAD
 ```
