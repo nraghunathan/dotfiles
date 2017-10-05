@@ -19,6 +19,7 @@ git commit -a -m "Initial commit"
 git push -u origin HEAD
 ```
 
+Note: When you are done strapping your Mac, you will have your personal dotfiles repository cloned twice to your mac.  Once in `~/src/dotfiles` and once in `~/.dotfiles`.  To avoid this situation, either remove the `~/src/dotfiles` folder, or symlink it to the root folder (`ln -s $HOME/src/dotfiles $HOME/.dotfiles`).
 
 ## Important Files
 `.Brewfile`
