@@ -23,11 +23,11 @@ git push -u origin HEAD
 ## Important Files
 `.Brewfile`
 
-Strap will look for a `.Brewfile` in the root of your dotfiles repository (`~/.dotfiles`).  If it finds it, it will symlink it to your personal root folder, and then install all Brew packages and casks referenced in it.
+Strap will look for a `.Brewfile` in the root of your dotfiles repository (`~/.dotfiles/.Brewfile`).  If it finds it, it will symlink it to your personal root folder, and then install all Brew packages and casks referenced in it.
 
 `script/setup`
 
-Strap will call this script, if it exists, to perform personalized setup steps.  You can call out from here to other scripts, other repos, etc.
+Strap will call this script, if it exists, to perform personalized setup steps.  You can use it configure the projects and virtual machines installed on your Mac, call out from here to other scripts, other repos, etc.
 
 `script/postbrew`
 
