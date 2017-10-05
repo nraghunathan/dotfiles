@@ -16,5 +16,12 @@ ensure_dotfile_link() {
   fi
 }
 
+if [ -f "$HOME/.gitconfig" ]; then
+  echo "ERROR: Personal .gitconfig file already exists!  Please make sure you capture the contents of this file to your personal dotfiles repository.  Then, remove the `~/.gitconfig` file and re-run strap."
+  echo "You could run the following command to do this:"
+  echo "cp -v ~/.gitconfig ~/.dotfiles/"
+  exit -1
+fi
+
 ensure_dotfile_link .gitconfig
 ensure_dotfile_link .Brewfile
