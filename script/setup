@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#!/usr/bin/env bash
+
+DOTFILESDIRREL=$(dirname $0)
+cd $DOTFILESDIRREL/..
+USER_DOTFILES=$(pwd -P)
+
+ensure_dotfile_link() {
+  HOMEFILE="$HOME/$1"
+  DOTFILE="$USER_DOTFILES/$1"
+     
+  if [ -L "$HOMEFILE" ] && ! [ -d "$DOTFILE" ]; then
+    ln -sfv "$DOTFILE" "$HOMEFILE"
+  else
+    rm -rv "$HOMEFILE"
+    ln -sv "$DOTFILE" "$HOMEFILE"
+  fi
+}
+
+ensure_dotfile_link .gitconfig
+ensure_dotfile_link .bash_profile
+ensure_dotfile_link .Brewfile
