@@ -5,10 +5,13 @@ set -e
 # scripts.  Use it to provide additional customizations.
 
 # source bash profile to get environment variables set
-#[ -f "$HOME/.bash_profile" ] && source "$HOME/.bash_profile"
+[ -f "$HOME/.bash_profile" ] && source "$HOME/.bash_profile"
 
 #---------------------------------------------------------------------
-# Projects
+# Projects.  The list of supported projects comes from
+# https://github.com/daptiv/dotfiles/tree/master/projects/
+# Each folder name is a project.  Just include the folder name as
+# outlined below, to include that project in your setup.
 #---------------------------------------------------------------------
 echo "Configuring projects"
 SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
@@ -21,6 +24,9 @@ fi
 
 #---------------------------------------------------------------------
 # Personal setup
+# If you have another personal repository that has additional
+# configuration, such as license keys, you can call out to it here.
 #---------------------------------------------------------------------
 # personal="$HOME/src/personal-configuration/setup.sh"
 #[ -f "$personal" ] && bash "$personal"
+
