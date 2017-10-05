@@ -10,16 +10,14 @@ Use this repository as a template for your own personal "dotfiles" repository, i
 *  Now, run these commands:
 
 ```bash
-git clone https://github.com/daptiv/dotfiles-template.git ~/src/dotfiles
-cd ~/src/dotfiles
+git clone https://github.com/daptiv/dotfiles-template.git ~/.dotfiles
+cd ~/.dotfiles
 git remote remove origin
 git remote add origin git@github.com:{your-github-username}/dotfiles.git
 git add -f *
 git commit -a -m "Initial commit"
 git push -u origin HEAD
 ```
-
-Note: When you are done strapping your Mac, you will have your personal dotfiles repository cloned twice to your mac.  Once in `~/src/dotfiles` and once in `~/.dotfiles`.  To avoid this situation, either remove the `~/src/dotfiles` folder, or symlink it to the root folder (`ln -s $HOME/src/dotfiles $HOME/.dotfiles`).  You can always edit and push updates from either folder.  The choice is yours.
 
 ## Important Files
 `.Brewfile`
