@@ -5,8 +5,10 @@ Use this repository as a template for your own personal "dotfiles" repository, i
 
 # Instructions
 * Clone this repository in order to get a copy of it locally.
-* If you don't have a dotfiles repository already, run this:
-    
+* If you don't have a dotfiles repository already, then:
+*  Create repository in your github account named `dotfiles`, but don't clone it.
+*  Now, run these commands:
+
 ```bash
 git clone https://github.com/daptiv/dotfiles-template.git ~/src/dotfiles
 cd ~/src/dotfiles
