@@ -18,3 +18,19 @@ ensure_dotfile_link() {
 
 ensure_dotfile_link .gitconfig
 ensure_dotfile_link .Brewfile
+
+#---------------------------------------------------------------------
+# Projects.  The list of supported projects comes from
+# https://github.com/daptiv/dotfiles/tree/master/projects/
+# Each folder name is a project.  Just include the folder name as
+# outlined below, to include that project in your setup.
+#---------------------------------------------------------------------
+SETUP_SCRIPT="$HOME/.daptiv-dotfiles/projects/setup"
+if [ -f "$SETUP_SCRIPT" ]; then
+	echo "Configuring projects"
+	# PPM is setup by the base scripts - no need to manual include
+	# bash "$SETUP_SCRIPT" ttm
+	# bash "$SETUP_SCRIPT" ppmspa
+fi
+
+
