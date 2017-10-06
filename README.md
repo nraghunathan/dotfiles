@@ -39,7 +39,3 @@ Strap will look for this file in `script/postbrew`, and it will run it as the ve
 `.bash_profile`
 
 This is your personal bash profile.  The daptiv `.bash_profile` file will source your personal `.bash_profile` file, if it exists in `~/.dotfiles/.bash_profile`
-
-`.gitconfig`
-
-This is your personal `.gitconfig` file.  Strap will symlink this to your home folder.

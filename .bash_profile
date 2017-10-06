@@ -3,3 +3,4 @@
 # Install rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+export USER_PROFILE_LOADED="1"

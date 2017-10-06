@@ -1,11 +1,14 @@
 #!/bin/bash
-set -e
+
+# source bash profile to get environment variables set
+if [ -z "$USER_PROFILE_LOADED"] && [ -f "$HOME/.bash_profile" ]; then
+  source "$HOME/.bash_profile"
+fi
 
 # This is a special script that is run at the end of the main Strap
 # scripts.  Use it to provide additional customizations.
 
-# source bash profile to get environment variables set
-[ -f "$HOME/.bash_profile" ] && source "$HOME/.bash_profile"
+set -e
 
 #---------------------------------------------------------------------
 # Projects.  The list of supported projects comes from
@@ -29,4 +32,3 @@ fi
 #---------------------------------------------------------------------
 # personal="$HOME/src/personal-configuration/setup.sh"
 #[ -f "$personal" ] && bash "$personal"
-
