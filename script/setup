@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script is run before items in your .Brewfile are installed
+
 DOTFILESDIRREL=$(dirname $0)
 cd $DOTFILESDIRREL/..
 USER_DOTFILES=$(pwd -P)
@@ -17,5 +19,4 @@ ensure_dotfile_link() {
 }
 
 # use the ensure_dotfile_link command to link files into your home directory
-# ex: ensure_dotfile_link .vimrc
 ensure_dotfile_link .Brewfile

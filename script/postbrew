@@ -1,13 +1,15 @@
 #!/bin/bash
 
+# This is a special script that is run after installing items from your .Brewfile
+# Use it to provide additional customizations.
+
 # source bash profile to get environment variables set
 if [ -z "$USER_PROFILE_LOADED"] && [ -f "$HOME/.bash_profile" ]; then
   source "$HOME/.bash_profile"
 fi
 
-# This is a special script that is run at the end of the main Strap
-# scripts.  Use it to provide additional customizations.
-
+# tell the script to exit with failure if any command
+# returns a non-zero exit code
 set -e
 
 #---------------------------------------------------------------------
@@ -23,6 +25,7 @@ if [ -f "$SETUP_SCRIPT" ]; then
 	# bash "$SETUP_SCRIPT" ttm
 	# bash "$SETUP_SCRIPT" ppmspa
 	# bash "$SETUP_SCRIPT" cognos
+  echo "Finished configuring projects"
 fi
 
 #---------------------------------------------------------------------
