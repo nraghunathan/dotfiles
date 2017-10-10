@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script is run before items in your .Brewfile are installed
+
 DOTFILESDIRREL=$(dirname $0)
 cd $DOTFILESDIRREL/..
 USER_DOTFILES=$(pwd -P)
@@ -7,7 +9,7 @@ USER_DOTFILES=$(pwd -P)
 ensure_dotfile_link() {
   HOMEFILE="$HOME/$1"
   DOTFILE="$USER_DOTFILES/$1"
-     
+
   if [ -L "$HOMEFILE" ] && ! [ -d "$DOTFILE" ]; then
     ln -sfv "$DOTFILE" "$HOMEFILE"
   else
@@ -16,12 +18,5 @@ ensure_dotfile_link() {
   fi
 }
 
-if [ -f "$HOME/.gitconfig" ]; then
-  echo "ERROR: Personal .gitconfig file already exists!  Please make sure you capture the contents of this file to your personal dotfiles repository.  Then, remove the `~/.gitconfig` file and re-run strap."
-  echo "You could run the following command to do this:"
-  echo "cp -v ~/.gitconfig ~/.dotfiles/"
-  exit -1
-fi
-
-ensure_dotfile_link .gitconfig
+# use the ensure_dotfile_link command to link files into your home directory
 ensure_dotfile_link .Brewfile
