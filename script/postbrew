@@ -27,6 +27,8 @@ if [ -f "$SETUP_SCRIPT" ]; then
 	bash "$SETUP_SCRIPT" ttm
 	bash "$SETUP_SCRIPT" pmdashboard
 	bash "$SETUP_SCRIPT" dtb
+	bash "$SETUP_SCRIPT" nfc
+	bash "$SETUP_SCRIPT" react-theme
 	#bash "$SETUP_SCRIPT" cognos
   echo "Finished configuring projects"
 fi
