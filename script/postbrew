@@ -1,16 +1,20 @@
 #!/bin/bash
 
+# tell the script to exit with failure if any command
+# returns a non-zero exit code
+set -e
+
 # This is a special script that is run after installing items from your .Brewfile
 # Use it to provide additional customizations.
 
 # source bash profile to get environment variables set
-if [ -z "$USER_PROFILE_LOADED"] && [ -f "$HOME/.bash_profile" ]; then
+if [ -z "$USER_PROFILE_LOADED" ] && [ -f "$HOME/.bash_profile" ]; then
+  echo "loading bash_profile"
   source "$HOME/.bash_profile"
+else
+  echo "bash_profile already loaded"
 fi
 
-# tell the script to exit with failure if any command
-# returns a non-zero exit code
-set -e
 
 #---------------------------------------------------------------------
 # Projects.  The list of supported projects comes from
@@ -29,6 +33,8 @@ if [ -f "$SETUP_SCRIPT" ]; then
 	bash "$SETUP_SCRIPT" dtb
 	#bash "$SETUP_SCRIPT" cognos
   echo "Finished configuring projects"
+else
+  echo "Unable to locate setup script: $SETUP_SCRIPT"
 fi
 
 #---------------------------------------------------------------------
