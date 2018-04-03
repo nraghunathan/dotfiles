@@ -30,6 +30,7 @@ if [ -f "$SETUP_SCRIPT" ]; then
   bash "$SETUP_SCRIPT" dtb
   bash "$SETUP_SCRIPT" new-feature-popup
   bash "$SETUP_SCRIPT" react-theme
+  base "$SETUP_SCRIPT" delegates
   #bash "$SETUP_SCRIPT" cognos
   echo "Finished configuring projects"
 fi
